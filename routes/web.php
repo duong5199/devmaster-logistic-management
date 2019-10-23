@@ -19,3 +19,13 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('welcome');
 });
+
+Route::match(['GET','POST'],
+    '/login',
+    'LoginController@Login')
+    ->middleware('non_auth_mw');
+
+Route::get(
+    '/user/{page?}',
+    'UserController@indexAction')
+    ->middleware('auth_mw');
