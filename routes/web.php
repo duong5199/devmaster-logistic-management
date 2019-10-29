@@ -16,14 +16,14 @@ Route::get('/', function () {
 });
 
 
-Route::get('/login', function () {
-    return view('welcome');
-});
-
 Route::match(['GET','POST'],
     '/login',
     'LoginController@Login')
     ->middleware('non_auth_mw');
+
+Route::get(
+    '/logout',
+    'LoginController@Logout');
 
 Route::get(
     '/user/{page?}',
