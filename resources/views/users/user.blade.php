@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-<a href="/dev-logistic-management/public/logout">Logout</a>
+<a href="/logout">Logout</a>
 
 @section('header-text')
     <h3 style="text-align: center; font-family: Times New Roman; color: dodgerblue ">Welcome <b>{{$username}}</b> to our application</h3>

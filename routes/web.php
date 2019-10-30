@@ -21,6 +21,9 @@ Route::match(['GET','POST'],
     'LoginController@Login')
     ->middleware('non_auth_mw');
 
+Route::get('/logout','LoginController@Logout')
+    ->middleware('auth_mw');
+
 Route::get(
     '/user/{page?}',
     'UserController@indexAction')
