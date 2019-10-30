@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 //    return view('welcome');
-    echo "giangbeo";
+    echo "giangbeo dep troai";
 });
 
 
