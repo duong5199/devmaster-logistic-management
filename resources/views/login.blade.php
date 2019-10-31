@@ -1,4 +1,4 @@
-@extends('layouts/default')
+@extends('layouts/login')
 
 @section('header-text')
     {{--    <h1 style="text-align: center; font-family: Times New Roman; color: dodgerblue ">Login</h1>--}}

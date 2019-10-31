@@ -1,13 +1,5 @@
 @extends('layouts.default')
-
-<a href="/logout">Logout</a>
-
-@section('header-text')
-    <h3 style="text-align: center; font-family: Times New Roman; color: dodgerblue ">Welcome <b>{{$username}}</b> to our application</h3>
-@endsection
-
 @section('content')
-    <div class="container">
         <div class="row mb-3">
             <a target="_blank" href="/laravel-app(ex)/public/user/add" class="btn btn-primary">Add User</a>
         </div>
@@ -61,6 +53,5 @@
             </nav>
         </div>
 
-    </div>
 @endsection
 
