@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-    background-image: url("https://www.tokkoro.com/picsup/3333237-paris-france-trees-landscape.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
+}
+.bg-img{
+    background-image: url("https://www.tokkoro.com/picsup/3333237-paris-france-trees-landscape.jpg");
 }
 
 .container{
@@ -62,3 +64,13 @@ input:focus{
 .links a{
     margin-left: 4px;
 }
+
+.w-full{
+    width: 100%;
+}
+
+.color-w{
+    color: white;
+}
+
+

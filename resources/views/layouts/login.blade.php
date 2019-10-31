@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
-<body>
+<body class="bg-img">
 <div class="container-fluid">
     <div class="row justify-content-center">
         <h4 class="text-center">
