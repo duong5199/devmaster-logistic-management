@@ -4,20 +4,21 @@
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
+                    <th>Stt</th>
                     <th>User Name</th>
                     <th>Password</th>
                     <th>Full Name</th>
                     <th>Phone</th>
                     <th>Address</th>
                     <th>Role</th>
+                    <th>Warehouse</th>
                     <th>Status</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($users as $us)
+                @foreach($users as $key => $us)
                     <tr>
-                        <td>{{ $us->id }}</td>
+                        <td>{{ $key }}</td>
                         <td>{{ $us->username }}</td>
                         <td>{{ $us->password }}</td>
                         <td>{{ $us->fullname }}</td>
@@ -26,6 +27,7 @@
                         <td>
                             {{$us->role}}
                         </td>
+                        <td>{{ $us->warehouse_name }}</td>
                         <td>
                             <a href="/user/edit/{{$us->user_id}}">Edit</a>|
                             <a href="/user/delete/{{$us->user_id}}">Delete</a>

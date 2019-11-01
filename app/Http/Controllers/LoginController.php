@@ -15,7 +15,6 @@ class LoginController extends BaseController
     public function Login(Request $req)
     {
         $errors = new MessageBag();
-
         if (!empty($req->post())){
             $validator = Validator::make($req->post(), [
                 'username' => 'required|min:5',
@@ -25,7 +24,7 @@ class LoginController extends BaseController
                 $username = $req->post('username');
                 $password = $req->post('password');
 
-                $user = User::query() ->where('username', $username) ->get();
+                $user = User::query()->where('username', $username)->get();
 
                 if (!empty($user)){
                     $user = $user[0];

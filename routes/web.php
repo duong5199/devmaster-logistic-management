@@ -27,21 +27,46 @@ Route::get('/logout','LoginController@Logout')
 //User
 
 Route::get(
-    '/user/{page?}',
+    '/user',
     'UserController@indexAction')
     ->middleware('auth_mw');
 
 Route::match(['GET','POST'],
-    '/CreateUser',
+    '/user/add',
     'UserController@createUser')
     ->middleware('auth_mw');
 
 Route::match(['GET','POST'],
-    'user/edit/{id?}',
+    '/user/edit/{id?}',
     'UserController@edit')
     ->middleware('auth_mw');
 
 Route::get(
-    'user/delete/{id?}',
+    '/user/delete/{id?}',
     'UserController@delete')
+    ->middleware('auth_mw');
+
+Route::get(
+    '/warehouse',
+    'WareHouseController@indexAction')
+    ->middleware('auth_mw');
+
+Route::match(['GET','POST'],
+    '/warehouse/edit/{id?}',
+    'WareHouseController@edit')
+    ->middleware('auth_mw');
+
+Route::match(['GET','POST'],
+    '/warehouse/add',
+    'WareHouseController@add')
+    ->middleware('auth_mw');
+
+Route::get(
+    '/warehouse/delete/{id?}',
+    'WareHouseController@delete')
+    ->middleware('auth_mw');
+
+Route::get(
+    '/thongke',
+    'WareHouseController@index')
     ->middleware('auth_mw');

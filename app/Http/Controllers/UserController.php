@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends BaseController
 {
@@ -17,7 +18,8 @@ class UserController extends BaseController
         $page            = $req->query('page');
         $numberOfRecords = User::query()->count();
         $numberOfPage    = $numberOfRecords > 0 ? ceil($numberOfRecords / $limit) : 1;
-        $users         = User::query()
+        $users         = DB::table('tb_employees')
+            ->join('tb_warehouse', 'tb_employees.warehouse_id', '=', 'tb_warehouse.warehouse_id')
             ->skip(($page - 1) * $limit)
             ->take($limit)
             ->get();

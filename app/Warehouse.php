@@ -11,5 +11,6 @@ class Warehouse extends Model
 
     protected $table = 'tb_warehouse';
 
+    protected $primaryKey = 'warehouse_id';
 
 }

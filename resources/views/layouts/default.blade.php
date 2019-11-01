@@ -70,12 +70,43 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="CreateUser" class="nav-link">
+                                    <a href="/user/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add New User</p>
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Warehouse
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/warehouse?page=1" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List warehouse</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/warehouse/add" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add New User</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/thongke" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Thống kê
+                                </p>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="/logout" class="nav-link">

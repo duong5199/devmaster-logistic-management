@@ -54,7 +54,11 @@
                 <label>Ware House</label>
                 <select class="form-control" name="Warehouse">
                     @foreach($wareHouses as $warehouse)
-                    <option value="{{$warehouse->warehouse_id}}">{{$warehouse->warehouse_name}}</option>
+                    <option
+                        @if($warehouse->warehouse_id == $user->warehouse_id)
+                            selected
+                        @endif
+                        value="{{$warehouse->warehouse_id}}">{{$warehouse->warehouse_name}}</option>
                     @endforeach
                 </select>
             </div>
