@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+ use  Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,3 +29,17 @@ Route::get(
     '/user/{page?}',
     'UserController@indexAction')
     ->middleware('auth_mw');
+
+Route::get('/dwh','WarehouseController@showDwh')->name('dwh'); //show database
+
+Route::get('/dwh/adwhs','WarehouseController@add')->name('add_dwh'); // add dwh
+
+
+Route::post('/dwh','WarehouseController@store')->name('store');
+
+Route::get('/test', function() {
+    return view('test');
+});
+Route::get('/dwh/{id}/edit','WarehouseController@edit')->name('edit');
+
+Route::post('/dwh/{id}','WarehouseController@update')->name('put');

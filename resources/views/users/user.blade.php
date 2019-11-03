@@ -11,7 +11,7 @@
                     <th>User Name</th>
                     <th>Password</th>
                     <th>Full Name</th>
-                    <th>Email</th>
+                    <th>Phone</th>
                     <th>Role</th>
                     <th>Action</th>
                 </tr>
@@ -23,13 +23,9 @@
                         <td>{{ $us->username }}</td>
                         <td>{{ $us->password }}</td>
                         <td>{{ $us->fullname }}</td>
-                        <td>{{ $us->email }}</td>
+                        <td>{{ $us->phone }}</td>
                         <td>
-                            @if($us->role == 1 )
-                                Admin
-                            @elseif($us->role == 2)
-                                Member
-                            @endif
+                            {{$us->role}}
                         </td>
                         <td>
                             <a href="/laravel-app(ex)/public/user/edit/{{$us->id}}">Edit </a>|
@@ -46,7 +42,7 @@
                 <ul class="pagination">
                     @for($i = 1; $i <= $numberOfPage; $i++)
                         <li class="page-item {{ ($page == $i) ? 'active' : '' }}">
-                            <a class="page-link" href="/laravel-app(ex)/public/user/{{ $i }}">{{ $i }}</a>
+                            <a class="page-link" href="/user/{{ $i }}">{{ $i }}</a>
                         </li>
                     @endfor
                 </ul>

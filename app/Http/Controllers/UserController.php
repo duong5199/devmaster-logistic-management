@@ -11,7 +11,7 @@ class UserController extends BaseController
 {
     public function indexAction(Request $req)
     {
-        $limit           = 2;
+        $limit           = 3;
         $page            = $req->route()->parameter('page', 1);
         $numberOfRecords = User::query()->count();
         $numberOfPage    = $numberOfRecords > 0 ? round($numberOfRecords / $limit) : 1;
