@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\AuthMiddleware;
+use App\Http\Middleware\admin;
 use App\Http\Middleware\NonAuthMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -35,7 +36,7 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
+//            \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -65,6 +66,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'auth_mw' => AuthMiddleware::class,
         'non_auth_mw' => NonAuthMiddleware::class,
+        'admin' => admin::class,
     ];
 
     /**

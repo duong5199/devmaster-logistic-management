@@ -14,59 +14,50 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth_mw');
 
 Route::match(['GET','POST'],
     '/login',
     'LoginController@Login')
     ->middleware('non_auth_mw');
 
-Route::get('/logout','LoginController@Logout')
-    ->middleware('auth_mw');
+Route::get('/logout','LoginController@Logout');
 
-//User
+Route::middleware(['auth_mw','admin'])->group(function () {
 
-Route::get(
-    '/user',
-    'UserController@indexAction')
-    ->middleware('auth_mw');
+    Route::get(
+        '/user',
+        'UserController@indexAction');
 
-Route::match(['GET','POST'],
-    '/user/add',
-    'UserController@createUser')
-    ->middleware('auth_mw');
+    Route::match(['GET','POST'],
+        '/user/add',
+        'UserController@createUser');
 
-Route::match(['GET','POST'],
-    '/user/edit/{id?}',
-    'UserController@edit')
-    ->middleware('auth_mw');
+    Route::match(['GET','POST'],
+        '/user/edit/{id?}',
+        'UserController@edit');
 
-Route::get(
-    '/user/delete/{id?}',
-    'UserController@delete')
-    ->middleware('auth_mw');
+    Route::get(
+        '/user/delete/{id?}',
+        'UserController@delete');
 
-Route::get(
-    '/warehouse',
-    'WareHouseController@indexAction')
-    ->middleware('auth_mw');
+    Route::get(
+        '/warehouse',
+        'WareHouseController@indexAction');
 
-Route::match(['GET','POST'],
-    '/warehouse/edit/{id?}',
-    'WareHouseController@edit')
-    ->middleware('auth_mw');
+    Route::match(['GET','POST'],
+        '/warehouse/edit/{id?}',
+        'WareHouseController@edit');
 
-Route::match(['GET','POST'],
-    '/warehouse/add',
-    'WareHouseController@add')
-    ->middleware('auth_mw');
+    Route::match(['GET','POST'],
+        '/warehouse/add',
+        'WareHouseController@add');
 
-Route::get(
-    '/warehouse/delete/{id?}',
-    'WareHouseController@delete')
-    ->middleware('auth_mw');
+    Route::get(
+        '/warehouse/delete/{id?}',
+        'WareHouseController@delete');
 
-Route::get(
-    '/thongke',
-    'WareHouseController@index')
-    ->middleware('auth_mw');
+    Route::get(
+        '/thongke',
+        'WareHouseController@index');
+});

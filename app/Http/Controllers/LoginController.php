@@ -25,13 +25,13 @@ class LoginController extends BaseController
                 $password = $req->post('password');
 
                 $user = User::query()->where('username', $username)->get();
-
                 if (!empty($user)){
                     $user = $user[0];
                     if ($password === $user->password){
 
                         if ($user->status == 1){
                             $req->session()->put('isLoggedIn', true);
+                            $req->session()->put('role',$user->role);
                             $req->session()->put('username', $username);
                             return redirect('/user');
                         }else{
